@@ -841,10 +841,18 @@ h3 {
 }
 
 .page-hero {
-  padding: 104px 0 72px;
+  padding: 58px 0 48px;
   background:
     linear-gradient(180deg, var(--warm-white), var(--white));
   border-bottom: 1px solid var(--border);
+}
+
+.hero.section-pad {
+  padding-top: 58px;
+}
+
+.page-hero + .section-pad {
+  padding-top: 46px;
 }
 
 .page-hero h1 {
@@ -895,6 +903,11 @@ h3 {
   display: block;
   margin-bottom: 0.35rem;
   color: var(--navy);
+  font-weight: 800;
+}
+
+.required-marker {
+  color: var(--bronze);
   font-weight: 800;
 }
 
@@ -1107,6 +1120,18 @@ h3 {
 @media (max-width: 900px) {
   .section-pad {
     padding: 72px 0;
+  }
+
+  .page-hero {
+    padding: 44px 0 40px;
+  }
+
+  .hero.section-pad {
+    padding-top: 44px;
+  }
+
+  .page-hero + .section-pad {
+    padding-top: 36px;
   }
 
   .hero-grid,

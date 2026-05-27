@@ -16,5 +16,5 @@ Static HTML, CSS, and minimal JavaScript website for Business Tax Prime, LLC.
 
 ## Notes
 
-- The contact form is a static design placeholder and should be connected to a form, CRM, or scheduling provider before launch.
+- The contact form posts to Formspree and should be tested in the Formspree dashboard before production use.
 - Contact details, privacy policy language, and terms language are placeholders and should be finalized before production use.

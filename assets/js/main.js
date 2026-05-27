@@ -10,10 +10,28 @@ if (navToggle && primaryNav) {
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 document.querySelectorAll(".primary-nav a").forEach((link) => {
-  const linkPage = link.getAttribute("href");
-  if (linkPage === currentPage) {
+  const href = link.getAttribute("href") || "";
+  const [linkPage, linkHash] = href.split("#");
+  const hashMatches = linkHash ? `#${linkHash}` === window.location.hash : true;
+  if (linkPage === currentPage && hashMatches) {
     link.setAttribute("aria-current", "page");
   }
+});
+
+const currentLanguageLink = document.querySelector("[data-language-current]");
+if (currentLanguageLink) {
+  currentLanguageLink.setAttribute("href", window.location.pathname || "index.html");
+  currentLanguageLink.setAttribute("aria-current", "true");
+}
+
+document.querySelectorAll("[data-translate-lang]").forEach((link) => {
+  const language = link.getAttribute("data-translate-lang");
+  const publicPath = window.location.pathname || "/";
+  const publicUrl = `https://businesstaxprime.com${publicPath}`;
+  link.setAttribute(
+    "href",
+    `https://translate.google.com/translate?sl=en&tl=${language}&u=${encodeURIComponent(publicUrl)}`
+  );
 });
 
 document.querySelectorAll("[data-year]").forEach((node) => {

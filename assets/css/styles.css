@@ -150,11 +150,13 @@ h3 {
 }
 
 .header-inner {
+  position: relative;
   min-height: 104px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
+  padding-top: 0.85rem;
 }
 
 .brand {
@@ -214,6 +216,7 @@ h3 {
   align-items: center;
   gap: 0.08rem;
   margin-left: auto;
+  padding-top: 0.9rem;
 }
 
 .primary-nav a,
@@ -256,6 +259,12 @@ h3 {
   transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
 }
 
+.primary-nav > .nav-dropdown:last-child .nav-submenu {
+  left: auto;
+  right: 0;
+  transform: translate(0, 8px);
+}
+
 .nav-submenu a {
   display: block;
   padding: 0.75rem 0.8rem;
@@ -265,6 +274,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0;
   text-align: center;
+  white-space: normal;
 }
 
 .nav-dropdown:hover .nav-submenu,
@@ -272,6 +282,11 @@ h3 {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
+}
+
+.primary-nav > .nav-dropdown:last-child:hover .nav-submenu,
+.primary-nav > .nav-dropdown:last-child:focus-within .nav-submenu {
+  transform: translate(0, 0);
 }
 
 .primary-nav a:hover,
@@ -282,6 +297,9 @@ h3 {
 }
 
 .language-toggle {
+  position: absolute;
+  right: 0;
+  top: 0.78rem;
   display: inline-flex;
   align-items: center;
   gap: 0.36rem;
@@ -1155,6 +1173,7 @@ h3 {
   }
 
   .language-toggle {
+    position: static;
     order: 2;
     margin-left: auto;
   }
@@ -1175,6 +1194,7 @@ h3 {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin-left: 0;
+    padding-top: 0.75rem;
   }
 
   .primary-nav.is-open {

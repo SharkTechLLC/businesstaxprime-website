@@ -703,6 +703,21 @@ h3 {
   top: 8px;
 }
 
+.icon-payroll::before {
+  width: 22px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+}
+
+.icon-payroll::after {
+  width: 11px;
+  height: 2px;
+  background: currentColor;
+  bottom: 12px;
+  box-shadow: 0 5px 0 currentColor;
+}
+
 .icon-shield::before {
   width: 19px;
   height: 22px;
@@ -938,6 +953,13 @@ h3 {
   border: 1px solid rgba(185, 131, 45, 0.28);
   border-left: 4px solid var(--gold);
   border-radius: var(--radius);
+}
+
+.coming-soon-note a {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .tech-hero {

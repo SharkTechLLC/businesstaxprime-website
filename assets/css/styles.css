@@ -822,13 +822,18 @@ h3 {
   display: grid;
   gap: 0.7rem;
   padding: clamp(1.2rem, 3vw, 2rem);
-  background: var(--white);
-  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(66, 99, 231, 0.045), rgba(255, 255, 255, 0) 44%),
+    var(--white);
+  border: 1px solid rgba(66, 99, 231, 0.18);
+  border-top: 4px solid var(--royal);
   border-radius: var(--radius);
   box-shadow: var(--soft-shadow);
 }
 
 .contact-form label {
+  display: block;
+  margin-bottom: 0.35rem;
   color: var(--navy);
   font-weight: 800;
 }
@@ -842,7 +847,7 @@ h3 {
   padding: 0.9rem 1rem;
   color: var(--text);
   font: inherit;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .contact-form textarea {
@@ -858,7 +863,12 @@ h3 {
 
 .form-note {
   margin: 0;
-  color: var(--muted);
+  padding: 0.85rem 1rem;
+  color: var(--navy);
+  background: rgba(220, 177, 87, 0.16);
+  border: 1px solid rgba(185, 131, 45, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
 }
 

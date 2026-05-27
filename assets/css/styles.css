@@ -179,13 +179,13 @@ h3 {
 }
 
 .brand-text strong {
-  color: var(--royal);
+  color: var(--navy);
   font-size: 1.05rem;
   line-height: 1;
 }
 
 .brand-text span {
-  color: var(--royal);
+  color: var(--navy);
   font-size: 0.94rem;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -569,20 +569,6 @@ h3 {
   border-bottom: 0;
   border-radius: 3px 3px 0 0;
   top: 8px;
-}
-
-.icon-payroll::before {
-  width: 22px;
-  height: 16px;
-  border: 2px solid currentColor;
-  border-radius: 3px;
-}
-
-.icon-payroll::after {
-  width: 8px;
-  height: 8px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
 }
 
 .icon-shield::before {

@@ -216,7 +216,8 @@ h3 {
   margin-left: auto;
 }
 
-.primary-nav a {
+.primary-nav a,
+.nav-dropdown > a {
   font-family: "Montserrat", "Inter", Arial, sans-serif;
   color: var(--muted);
   border-radius: 999px;
@@ -225,6 +226,52 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.08em;
   transition: background 180ms ease, color 180ms ease;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-submenu {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.65rem);
+  z-index: 120;
+  display: grid;
+  min-width: 220px;
+  padding: 0.55rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 8px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 0.75rem 0.8rem;
+  color: var(--navy);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
 }
 
 .primary-nav a:hover,
@@ -874,6 +921,28 @@ h3 {
   align-items: start;
 }
 
+.contact-aside {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+  background: var(--white);
+}
+
+.contact-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+}
+
 .about-copy {
   color: var(--muted);
 }
@@ -1112,8 +1181,32 @@ h3 {
     display: flex;
   }
 
-  .primary-nav a {
+  .primary-nav a,
+  .nav-dropdown > a {
     border-radius: 6px;
+  }
+
+  .nav-dropdown {
+    display: grid;
+  }
+
+  .nav-submenu {
+    position: static;
+    min-width: 0;
+    margin: 0.2rem 0 0.35rem 0.75rem;
+    padding: 0.25rem 0 0.25rem 0.7rem;
+    border: 0;
+    border-left: 3px solid var(--gold);
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-submenu a {
+    padding: 0.48rem 0.6rem;
+    text-align: left;
   }
 }
 

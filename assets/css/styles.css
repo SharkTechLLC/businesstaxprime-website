@@ -109,6 +109,92 @@ h3 {
   color: var(--white);
 }
 
+.photo-band,
+.photo-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-band {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.photo-band::before,
+.photo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.photo-band > .container,
+.photo-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.photo-band h2,
+.photo-band h3,
+.photo-hero h1 {
+  color: var(--white);
+}
+
+.photo-band p,
+.photo-hero p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.photo-band .eyebrow,
+.photo-hero .eyebrow {
+  color: var(--gold);
+}
+
+.photo-band .text-link {
+  color: var(--white);
+}
+
+.photo-band-books {
+  background-image: url("../images/bookkeping_taxservices2.jpg");
+  background-position: center 58%;
+}
+
+.photo-band-books::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 36, 0.94), rgba(11, 19, 36, 0.76) 48%, rgba(11, 19, 36, 0.54)),
+    linear-gradient(180deg, rgba(11, 19, 36, 0.18), rgba(11, 19, 36, 0.66));
+}
+
+.photo-band-tech {
+  background-image: url("../images/application_technology.jpg");
+  background-position: center;
+}
+
+.photo-band-tech::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 36, 0.72), rgba(11, 19, 36, 0.9) 52%, rgba(11, 19, 36, 0.96)),
+    linear-gradient(180deg, rgba(11, 19, 36, 0.2), rgba(11, 19, 36, 0.62));
+}
+
+.photo-band .pill-grid span,
+.photo-band .tech-board span {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border-color: rgba(220, 177, 87, 0.68);
+  box-shadow: 0 12px 28px rgba(11, 19, 36, 0.22);
+  backdrop-filter: blur(4px);
+}
+
+.photo-band .tech-board span:nth-child(odd) {
+  border-top-color: var(--royal);
+}
+
+.photo-band .tech-board span:nth-child(even) {
+  border-top-color: var(--gold);
+}
+
 .skip-link {
   position: fixed;
   left: 1rem;
@@ -417,6 +503,7 @@ h3 {
 .btn-primary {
   background: var(--blue);
   color: var(--white);
+  border-color: rgba(220, 177, 87, 0.58);
   box-shadow: 0 12px 24px rgba(36, 59, 115, 0.2);
 }
 
@@ -428,7 +515,7 @@ h3 {
 .btn-secondary {
   background: var(--white);
   color: var(--blue);
-  border-color: var(--border);
+  border-color: rgba(220, 177, 87, 0.68);
 }
 
 .visual-shell {
@@ -755,6 +842,11 @@ h3 {
   font-size: 1.04rem;
 }
 
+.photo-band .split p,
+.photo-band .section-heading p:last-child {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .feature-panel {
   padding: clamp(1.2rem, 3vw, 2rem);
   background: var(--white);
@@ -917,7 +1009,7 @@ h3 {
 .cta-box .btn-secondary {
   background: transparent;
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(220, 177, 87, 0.72);
 }
 
 .page-hero {
@@ -944,6 +1036,11 @@ h3 {
   font-size: 1.16rem;
 }
 
+.photo-hero h1,
+.photo-hero p:not(.eyebrow) {
+  color: var(--white);
+}
+
 .coming-soon-note {
   max-width: 760px;
   margin-top: 1.1rem;
@@ -966,6 +1063,42 @@ h3 {
   background:
     radial-gradient(circle at 70% 18%, rgba(66, 99, 231, 0.11), transparent 33%),
     linear-gradient(180deg, var(--warm-white), var(--white));
+}
+
+.photo-hero {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid rgba(220, 177, 87, 0.72);
+}
+
+.tech-photo-hero {
+  background-image: url("../images/application_technology.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.tech-photo-hero::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 36, 0.9), rgba(11, 19, 36, 0.78) 52%, rgba(11, 19, 36, 0.42)),
+    linear-gradient(180deg, rgba(11, 19, 36, 0.22), rgba(11, 19, 36, 0.72));
+}
+
+.photo-hero .coming-soon-note {
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(220, 177, 87, 0.46);
+  box-shadow: var(--soft-shadow);
+}
+
+.photo-hero p.coming-soon-note,
+.photo-hero .coming-soon-note strong,
+.photo-hero .coming-soon-note a {
+  color: var(--navy);
+}
+
+.photo-hero .coming-soon-note a {
+  text-decoration-color: rgba(220, 177, 87, 0.9);
 }
 
 .contact-grid {

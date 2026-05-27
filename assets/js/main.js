@@ -24,11 +24,16 @@ if (navToggle && primaryNav) {
 }
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const currentHash = window.location.hash;
 document.querySelectorAll(".primary-nav a").forEach((link) => {
   const href = link.getAttribute("href") || "";
   const [linkPage, linkHash] = href.split("#");
-  const hashMatches = linkHash ? `#${linkHash}` === window.location.hash : true;
-  if (linkPage === currentPage && hashMatches) {
+  if (linkPage !== currentPage) {
+    return;
+  }
+
+  const hashMatches = linkHash ? `#${linkHash}` === currentHash : !currentHash;
+  if (hashMatches) {
     link.setAttribute("aria-current", "page");
   }
 });
